@@ -1,0 +1,42 @@
+/*<!-- ---------- Наши постоянные клиенты -------- -->*/
+.clients {
+  text-align: center;
+  @extend %section;
+}
+.clients__list {
+  display: flex;
+  @extend %list;
+
+  .clients__item {
+    width: 170px;
+    height: 92px;
+  }
+}
+.clients__link {
+  @include center;
+  width: 100%;
+  height: 100%;
+
+  border: 1px solid #afb1b8;
+  color: $accent-color;
+  background-color: $white-color;
+  border-radius: 4px;
+
+  transition: border 250ms var(--timing-function);
+  &:focus,
+  &:hover {
+    border: 1px solid $accent-color;
+  }
+  .clients__union-icon {
+    fill: #afb1b8;
+    transition: fill 250ms var(--timing-function);
+  }
+  &:focus .clients__union-icon,
+  &:hover .clients__union-icon {
+    fill: currentColor;
+  }
+}
+
+.clients__item + .clients__item {
+  margin-left: 30px;
+}

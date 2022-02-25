@@ -1,0 +1,44 @@
+// Основной инфо блок
+.feature {
+  @extend %section;
+}
+.feature__list {
+  display: flex;
+  flex-wrap: wrap;
+  @extend %list;
+}
+.feature__item {
+  width: 270px;
+}
+.feature__item + .feature__item {
+  margin-left: 30px;
+}
+.feature__title--hidden {
+  @extend %visually-hidden;
+}
+
+.feature__title {
+  color: $title-text;
+  @include font(bold, 14px, 1.14, null);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.feature__text {
+  color: $primary-text-color;
+  @include font(null, 14px, 1.71, null);
+}
+// Иконки мейн блока
+.feature__icon-conteiner {
+  @include center;
+
+  width: 270px;
+  height: 120px;
+
+  background-color: #f5f4fa;
+  border-radius: 4px;
+  margin-bottom: 30px;
+}
+.feature__icon {
+  width: 70px;
+  height: 70px;
+}

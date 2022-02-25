@@ -1,0 +1,73 @@
+/* Наша команда */
+.team {
+  background-color: #f5f4fa;
+  @extend %section;
+}
+.team__list {
+  @include center;
+}
+
+.team__item {
+  background: $white-color;
+  /* material shadow v1 */
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+}
+.team__item + .team__item {
+  margin-left: 30px;
+}
+
+.team__frame {
+  text-align: center;
+  padding: 30px 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.team__members-name {
+  color: $title-text;
+  @include font(500, 16px, 19px, null);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+
+  margin-bottom: 10px;
+}
+.team__profession {
+  color: $primary-text-color;
+  @include font(400, 16px, 1.9, null);
+
+  /* identical to box height */
+
+  margin-bottom: 16px;
+}
+/*---------social Нашей команды----------*/
+
+.team__social {
+  @include center;
+  @extend %list;
+}
+.team__social-link {
+  @include center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: $white-color;
+  color: #afb1b8;
+  transition-property: background-color, color;
+  transition-duration: 250ms;
+  transition-timing-function: $timing-function;
+
+  &:hover,
+  &:focus {
+    background-color: $accent-color;
+    color: $white-color;
+  }
+}
+.team__icon {
+  fill: currentColor;
+}
+.team__item--social + .team__item--social {
+  margin-left: 10px;
+}

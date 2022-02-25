@@ -1,0 +1,112 @@
+// ---------------Подвал--------------
+.footer {
+  background-color: #2f303a;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+.foooter__logo {
+  display: block;
+  width: 145px;
+  height: 31px;
+  color: $white-color;
+  margin-bottom: 20px;
+}
+.footer__adress-place {
+  color: $white-color;
+  @include font(normal, 14px, 1.71, null);
+  font-style: normal;
+  text-decoration: none;
+  /* or 171% */
+}
+.adress__item + .adress__item {
+  margin-top: 9px;
+}
+.adress__contacts-link {
+  color: rgba(255, 255, 255, 0.6);
+  font-style: normal;
+  @include font(normal, 14px, 24px, null);
+  font-size: 14px;
+  text-decoration: none;
+}
+.adres__list {
+  @extend %list;
+}
+/*Footer socials*/
+
+.footer__flex {
+  display: flex;
+  align-items: baseline;
+  @extend %container;
+}
+.footer__invite-wrap {
+  margin-left: 70px;
+}
+.social {
+  @include center;
+  @extend %list;
+}
+.social__item + .social__item {
+  margin-left: 10px;
+}
+.footer__title {
+  color: $white-color;
+  @include font(bold, 14px, 1.71, 0.03em);
+  line-height: calc(16 / 14);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.social__link {
+  @include center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #afb1b8;
+  transition: color, background-color 250ms $timing-function;
+
+  &:hover,
+  &:focus {
+    background-color: $accent-color;
+    color: $white-color;
+  }
+}
+.social__icon {
+  fill: $white-color;
+}
+
+/*----------Footer Form-----------*/
+.footer__form {
+  display: flex;
+  margin-left: 93px;
+}
+.form {
+  margin-left: 93px;
+}
+.footer__button {
+  margin-left: 12px;
+  @include center;
+}
+
+.footer__input {
+  width: 358px;
+  height: 50px;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-sizing: border-box;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  background-color: #2f303a;
+
+  &::placeholder {
+    @include font(null, 16px, null, 0.03em);
+    line-height: calc(20 / 16);
+
+    @include center;
+
+    color: rgba(255, 255, 255, 0.6);
+  }
+}
+.footer__icon-send {
+  margin-left: 10px;
+}

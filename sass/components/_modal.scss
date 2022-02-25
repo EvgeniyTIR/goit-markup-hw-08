@@ -1,0 +1,183 @@
+/* -------------Модальное окно-------------*/
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.2);
+
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 250ms $timing-function, visibility 250ms $timing-function;
+}
+.modal.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+.modal__wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 528px;
+  height: 581px;
+  padding: 40px;
+
+  background: $white-color;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+.modal__close-button {
+  display: inline-flexbox;
+  border: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  width: 30px;
+  height: 30px;
+  margin-right: 8px;
+  margin-top: 8px;
+
+  background: $white-color;
+  background-image: url(../images/svg/close-black.svg);
+  background-size: 18px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+
+  &:hover,
+  &:focus {
+    background: $white-color;
+    background-image: url(../images/svg/close-blue.svg);
+    background-size: 18px;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+  }
+}
+.modal__title {
+  @include font(bold, 20px, null, 0.03em);
+  line-height: calc(23 / 20);
+  text-align: center;
+  margin-bottom: 8px;
+  color: $title-text;
+}
+.modal__input {
+  width: 100%;
+  padding-left: 42px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  box-sizing: border-box;
+  border-radius: 4px;
+
+  height: 40px;
+  &::placeholder {
+    @include font(null, 12px, null, 0.01em);
+    line-height: calc(14 / 12);
+    color: rgba(117, 117, 117, 0.5);
+  }
+}
+.modal__textarea {
+  height: 120px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+}
+
+.modal__lable {
+  @include font(null, 12px, null, 0.01em);
+  line-height: calc(14 / 12);
+  color: #757575;
+  display: inline-block;
+
+  margin-bottom: 4px;
+}
+.modal__form {
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.modal__form-field {
+  margin-bottom: 6px;
+}
+.modal__position-wrap {
+  position: relative;
+}
+
+.modal__label-check {
+  @include font(null, 14px, null, 0.03em);
+  line-height: calc(24 / 14);
+  align-items: center;
+  cursor: pointer;
+}
+
+.modal__form-field-button {
+  @include center;
+}
+
+.modal__link {
+  color: $accent-color;
+}
+.modal__icon {
+  position: absolute;
+  display: inline-block;
+  top: 50%;
+  left: 19px;
+  transform: translateY(-50%);
+
+  .modal__input:hover + &,
+  .modal__input:focus + & {
+    fill: $accent-color;
+    cursor: pointer;
+  }
+}
+.modal__input:hover,
+.modal__input:focus {
+  border: 1px solid $accent-color;
+  cursor: pointer;
+}
+.modal__form-field-checkbox {
+  @include center;
+  position: relative;
+  margin-bottom: 30px;
+}
+.modal__check-position {
+  @include center;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+
+  margin-right: 0;
+  width: 16px;
+  height: 15px;
+  border: 2px solid $title-text;
+  border-radius: 2px;
+}
+
+.modal__check-icon {
+  border-radius: 2px;
+}
+.modal__checkbox {
+  @extend %visually-hidden;
+
+  &:checked + .modal__label-check > span {
+    background-color: $accent-color;
+    border: none;
+  }
+  &:focus + .modal__label-check > span,
+  &:hover + .modal__label-check > span {
+    border-color: $accent-color;
+    cursor: pointer;
+  }
+}

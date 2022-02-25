@@ -1,0 +1,48 @@
+// Меню авторизации
+.auth {
+  display: flex;
+  margin-left: auto;
+
+  .auth__item + .auth__item {
+    margin-left: 50px;
+  }
+}
+// Иконки навигации
+
+.auth__link {
+  @include center;
+  color: $primary-text-color;
+  @include font(500, 14px, 1.43, 0.02em);
+  text-decoration: none;
+
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  transition: color 250ms $timing-function;
+}
+
+.auth__icon-envelop {
+  fill: #757575;
+  margin-right: 10px;
+  transition: fill 250ms $timing-function;
+
+  .auth__link:hover &,
+  .auth__link:focus & {
+    fill: $accent-color;
+  }
+}
+.auth__icon-tel {
+  fill: #757575;
+  margin-right: 10px;
+  transition: fill 250ms $timing-function;
+
+  .auth__link:hover &,
+  .auth__link:focus & {
+    fill: $accent-color;
+  }
+}
+.auth__link:hover,
+.auth__link:focus {
+  color: $accent-color;
+  transition: color 250ms $timing-function;
+}

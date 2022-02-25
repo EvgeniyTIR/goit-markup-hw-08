@@ -1,0 +1,33 @@
+/* Чем мы занимаемся */
+.doing {
+  @extend %section;
+  padding-top: 0;
+}
+.doing__list {
+  display: flex;
+  @extend %list;
+
+  .doing__item + .doing__item {
+    margin-left: 30px;
+  }
+}
+.doing__item {
+  position: relative;
+  z-index: 0;
+}
+.doing__thumb {
+  height: 70px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(47, 48, 58, 0.8);
+}
+.doing__cards-title {
+  @include font(bold, 14px, null, 0.03em);
+  line-height: calc(16 / 14);
+  text-align: center;
+  text-transform: uppercase;
+
+  color: $white-color;
+  padding: 27px 0;
+}

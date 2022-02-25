@@ -1,0 +1,38 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  color: $primary-text-color;
+}
+
+// Сброс отступов
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+// Сброс стиля списков
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+// Сброс отступов каринок, отзывчивость
+img {
+  display: block;
+  min-width: 100%;
+  height: auto;
+}
+button {
+  cursor: pointer;
+}
+header {
+  outline: 1px solid #ececec;
+}
+textarea {
+  resize: none;
+}
