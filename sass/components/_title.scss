@@ -1,10 +1,9 @@
 .title {
   color: $title-text;
-  @include font(bold, 36px, 1.16, null);
-  font-weight: bold;
-  font-size: 36px;
-  line-height: 1.16;
+  @include font(bold, 28px, 1.17, null);
   text-align: center;
-
+  @media screen and (min-width: 1200px) {    
+    @include font(bold, 36px, 1.16, null);
+  }
   margin-bottom: 50px;
 }

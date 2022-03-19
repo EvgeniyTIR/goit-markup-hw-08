@@ -4,14 +4,24 @@
   padding-right: 15px;
   margin-right: auto;
   margin-left: auto;
-  @media screen and (min-width: 480px){
-    width: 480;
-  }
+  @media screen and (min-width: 480px) {    
+    width: 480px;   
+    } 
+  @media screen and (min-width: 768px) {    
+    width: 768px;   
+    } 
+    @media screen and (min-width: 1200px) {    
+      width: 1200px;   
+    } 
 }
 /*паддинг секций*/
-%section {
+%section {  
+  padding-top: 60px;
+  padding-bottom: 60px;
+  @media screen and (min-width: 1200px) {    
   padding-top: 94px;
   padding-bottom: 94px;
+    } 
 }
 /*Скрытый заголовок/обьект*/
 %visually-hidden {

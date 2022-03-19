@@ -3,6 +3,9 @@
   display: none;
   @extend %section;
   padding-top: 0;
+  @media screen and (min-width: 1200px) {    
+  display: flex;  
+  }
 }
 .doing__list {
   display: flex;
