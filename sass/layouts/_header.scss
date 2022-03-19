@@ -1,5 +1,5 @@
 .nav__list {
-  display: flex;
+  display: none;
 
   .nav__item + .nav__item {
     margin-left: 50px;
@@ -8,6 +8,8 @@
 .main-nav {
   @include center;
   @extend %container;
+  padding-top: 16px;
+  padding-bottom: 16px;  
 }
 .nav__link {
   display: block;

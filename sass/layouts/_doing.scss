@@ -1,5 +1,6 @@
 /* Чем мы занимаемся */
 .doing {
+  display: none;
   @extend %section;
   padding-top: 0;
 }
