@@ -2,8 +2,10 @@
   color: $title-text;
   @include font(bold, 28px, 1.17, null);
   text-align: center;
-  @media screen and (min-width: 1200px) {    
+  margin-bottom: 30px;
+  @include desk {    
     @include font(bold, 36px, 1.16, null);
+    margin-bottom: 50px;
   }
-  margin-bottom: 50px;
+  
 }

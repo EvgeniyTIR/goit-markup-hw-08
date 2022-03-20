@@ -5,21 +5,33 @@
 .feature__list {
   display: flex;
   flex-wrap: wrap; 
-  @media screen and (min-width: 768px) {    
+  @include tab {    
     margin-left: -30px;
     } 
   @extend %list;
 }
 .feature__item {
   // width: 270px;
-  width: 100%; 
-  @media screen and (min-width: 768px) {    
+  width: 100%;
+  &:nth-last-child(n+2){
+    margin-bottom: 30px; 
+    }   
+  @include tab {    
       width: calc(100% / 2 - 30px);
-      margin-left: 30px;      
+      margin-left: 30px;
+      &:nth-last-child(n+2){
+        margin-bottom: 0; 
+        } 
+      &:nth-last-child(n+3){
+        margin-bottom: 30px; 
+        }        
       } 
-  @media screen and (min-width: 1200px) {    
+  @include desk{    
       width: calc(100% / 4 - 30px);
-      margin-left: 30px;      
+      margin-left: 30px;  
+      &:nth-last-child(n){
+        margin-bottom: 0; 
+        }     
       }     
     }   
  
@@ -41,8 +53,7 @@
 .feature__text {
   color: $primary-text-color;
   @include font(null, 14px, 1.71, null);
-  margin-bottom: 30px;
-}
+  }
 // Иконки мейн блока
 .feature__icon-conteiner {
   @include center;
