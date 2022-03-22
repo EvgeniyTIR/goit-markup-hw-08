@@ -6,15 +6,23 @@
 }
 .foooter__logo {
   display: block;
-  width: 145px;
-  height: 31px;
+  @include font(700, 24px, 1.16, null);   
+  @include desk {    
+  @include font(bold, 26px, 2, null);
+     }       
   color: $white-color;
   margin-bottom: 20px;
 }
+.adress{
+  font-style: normal;
+  margin-bottom: 60px;
+  @include desk {    
+    margin-bottom: 0;
+     }   
+}
 .footer__adress-place {
   color: $white-color;
-  @include font(normal, 14px, 1.71, null);
-  font-style: normal;
+  @include font(normal, 14px, 1.71, null);  
   text-decoration: none;
   /* or 171% */
 }
@@ -33,13 +41,33 @@
 }
 /*Footer socials*/
 
-.footer__flex {
-  display: flex;
-  align-items: baseline;
+.footer__flex {  
+  text-align: center;
+  @include desk {    
+  display: flex;  
+  align-items: baseline;  
+  text-align: left
+     }   
   @extend %container;
 }
-.footer__invite-wrap {
+.footer__invite-wrap {  
+  margin-bottom: 60px;
+  @include desk {    
   margin-left: 70px;
+  margin-bottom: 0;
+       }   
+}
+.footer__wrap--tab{
+  @include tab{
+  display: flex;
+  justify-content: space-around;
+  @include desk {    
+  align-items: baseline;   
+         }  
+}
+}
+.footer__input{
+  margin-bottom: 20px; 
 }
 .social {
   @include center;
@@ -76,12 +104,19 @@
 }
 
 /*----------Footer Form-----------*/
-.footer__form {
-  display: flex;
-  margin-left: 93px;
+.footer__mailing-wrap{  
+  @include desk {    
+    margin-left: 93px;       
+  }  
 }
-.form {
-  margin-left: 93px;
+.footer__form {
+  @include center;
+  flex-direction: column;  
+  @include desk { 
+    align-items: baseline;    
+    flex-direction: row;       
+  }  
+  
 }
 .footer__button {
   margin-left: 12px;
@@ -89,7 +124,15 @@
 }
 
 .footer__input {
-  width: 358px;
+  width: 100%;
+  @include tab {
+    width: 450px;
+  }
+  @include desk {    
+   width: 358px;
+   margin-bottom: 0;
+   }
+  
   height: 50px;
 
   border: 1px solid rgba(255, 255, 255, 0.3);
