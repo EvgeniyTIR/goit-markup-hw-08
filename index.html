@@ -18,12 +18,7 @@
 
     <header>
         <div class="conteiner main-nav">
-            <a href="./index.html" class="logo"><span class="logo__text">Web</span>Studio</a>
-            <button type="button" class="main-nav__button">
-                <svg class="main-nav__icon" width="40" height="40">
-                    <use href="images/icons.svg#icon-menu"></use>
-                </svg>
-            </button>
+            <a href="./index.html" class="logo"><span class="logo__text">Web</span>Studio</a>            
             <nav class="nav">
                 <ul class="nav__list list">
                     <li class="nav__item"><a href="./index.html" class="nav__link current">Студия</a></li>
@@ -42,19 +37,54 @@
                             <use href="images/icons.svg#icon-telefon"></use>
                         </svg>+38 096 111 11 11</a></li>
             </ul>
+            <button type="button" class="main-nav__button" data-menu-open>
+                <svg class="main-nav__icon" width="40" height="40">
+                    <use href="images/icons.svg#icon-menu"></use>
+                </svg>
+            </button>
+            <!-- !------------------ Mobile Menu ----------------! -->
+            
+            <div class="mobile-menu is-hidden" data-menu>
+                <div class="container">
+                <div class="mobile-menu-top">             
+                <button type="button" class="moblile-menu__close-button" data-menu-close>
+                </button> 
+                <ul class="mobile-menu__list list">
+                    <li class="mobile-menu__item"><a href="./index.html" class="mobile-menu__link">Студия</a></li>
+                    <li class="mobile-menu__item"><a href="./portfolio.html" class="mobile-menu__link">Портфолио</a></li>
+                    <li clas="mobile-nav-menu__item"><a href="" class="mobile-menu__link">Контакты</a></li>
+                </ul>  
+                </div>
+                <div class="mobile-menu-bot">  
+                <ul class="mobile-auth__list list">
+                    <li class="mobile-auth__item"><a href="tel:+380961111111" class="mobile-auth__link">
+                            +38 096 111 11 11</a></li>
+                    <li class="mobile-auth__item "><a href="mailto:info@devstudio.com" class="mobile-auth__link menu-mail">      
+                            info@devstudio.com</a></li>
+                    
+                </ul>  
+                <ul class="mobile-social__list list">
+                    <li class="mobile-social__item"><a class="mobile-social__link" href="">Instagram</a></li>
+                    <li class="mobile-social__item"><a class="mobile-social__link" href="">Twitter</a></li>
+                    <li class="mobile-social__item"><a class="mobile-social__link" href="">Facebook</a></li>
+                    <li class="mobile-social__item"><a class="mobile-social__link" href="">LinkedIn</a></li>
+                </ul> 
+              </div>                             
+              </div>   
+            </div>
         </div>
     </header>
 
 
     <main>
         <!--                блок заказа услуг                -->
-        <!-- <section class="hero">
+        <section class="hero">
             <div class="conteiner">
                 <h1 class="hero__title">Эффективные решения <br /> для вашего бизнеса</h1>
                 <button type="button" class="hero__button button" data-modal-close>Заказать услугу</button>
 
             </div>
-        </section> -->
+        </section>
         <!--           Основной инфо блок    -->
         <section class="section  feature">
             <h2 class="feature__title--hidden visually-hidden">Особенности</h2>
@@ -420,16 +450,10 @@
                 </div>
             </form>
         </div>
-    </div>
-                    !------------------ Mobile Menu ----------------!
-    <div class="modal is-hidden" data-modal>
-        <div class="modal__wrap">
-
-            <button class="modal__close-button" data-modal-open>
-            </button>            
-    </div>
+    </div>   
 
     <script src="./js/modal.js"></script>
+    <script src="./js/menu.js"></script>
 
 </body>
 

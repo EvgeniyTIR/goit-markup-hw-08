@@ -1,8 +1,10 @@
 /* --ПОРТФОЛИО-- 
 Фильтр списка проєктов */
 .filter {
-  // padding-top: 94px;
-  // padding-bottom: 94px;
+  @include desk {    
+  padding-top: 94px;
+  padding-bottom: 94px;
+  }  
   padding-top: 60px;
   padding-bottom: 60px;
   @extend %section;
@@ -37,6 +39,9 @@
   &:nth-last-child(n+3){
     margin-bottom: 15px; 
     } 
+  &:nth-child(n){
+    margin-left: 0;
+  }  
     @include tab {    
       &:nth-last-child(n+3){
         margin-bottom: 0; 
@@ -67,6 +72,12 @@
 }
 .filter__item + .filter__item {
   margin-left: 8px;
+}
+.filter__item:nth-child(4){
+  margin-left: 0;
+  @include tab{
+    margin-left: 8px;
+  }
 }
 .filter__list {
   display: flex;

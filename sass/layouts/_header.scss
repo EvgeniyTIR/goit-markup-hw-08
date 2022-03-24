@@ -1,5 +1,8 @@
 .nav__list {
   display: none;
+  @include tab{
+    display: flex;
+  }
 
   .nav__item + .nav__item {
     margin-left: 50px;
@@ -7,9 +10,15 @@
 }
 .main-nav {
   @include center;
-  @extend %container;   
+  @extend %container; 
+  @include tab{
+    justify-content: space-between;
+  }  
 }
 .main-nav__button{ 
+  @include tab{
+    display: none;
+  }
   border: none;
   background-color:$white-color; 
   margin-top: 10px;
@@ -61,5 +70,114 @@
   &:hover::after {
     transition: transform 2500ms $timing-function;
     transform: scaleX(0);
+  }
+}
+      //        Mobile menu
+.mobile-menu{
+  position: fixed;
+  z-index: 1;
+  background-color: #fff;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+.mobile-menu.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+.container{  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding:48px 15px 48px 40px ;
+  margin-right: auto;
+  margin-left: auto;  
+  height: 100%;
+  @include tel {    
+    width: 480px;   
+    } 
+  @include tab {    
+    width: 768px;   
+    } 
+  @include desk {     
+      width: 1200px;   
+    } 
+}
+
+.mobile-menu__item:nth-last-child(n+1){
+  margin-bottom: 32px;
+}
+.mobile-menu__link{
+  text-decoration: none;
+  cursor: pointer;
+  @include font(500, 40px, 1.17, 0.02em);
+  color:$title-text;
+}
+.mobile-menu__link:hover,
+.mobile-menu__link:focus{
+  color: $accent-color;
+}
+.mobile-auth__list{
+  margin-bottom: 64px;
+}
+.mobile-auth__item{
+  margin-bottom: 32px;
+}
+.mobile-auth__link{
+  text-decoration: none;
+  cursor: pointer;
+  @include font(500, 34px, 1.17, 0.02em);
+  color:$accent-color; 
+  }
+.menu-mail{
+  @include font(500, 24px, 1.17, 0.02em);
+  color: $primary-text-color;
+ }
+.mobile-social__list{
+  display: flex;
+  flex-wrap: wrap;
+}
+.mobile-social__item + .mobile-social__item{
+  border-left: 1px solid rgba(33, 33, 33, 0.2);
+  padding-left: 10px;
+  margin-left: 10px;
+}
+.mobile-social__link{
+  
+  text-decoration: none;
+  cursor: pointer;
+  @include font(500, 18px, 1.22, 0.02em);
+  color:$accent-color; 
+}
+.moblile-menu__close-button {  
+  display: block;
+  border: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  width: 40px;
+  height: 40px;
+  margin-right: 15px;
+  margin-top: 10px;
+  padding: 0;
+
+  background: $white-color;
+  background-image: url(../images/svg/close-black.svg);
+  background-size: 29px;
+  background-repeat: no-repeat;
+  background-position: center;  
+  
+  &:hover,
+  &:focus {
+    background: $white-color;
+    background-image: url(../images/svg/close-blue.svg);
+    background-size: 29px;
+    background-repeat: no-repeat;
+    background-position: center;    
   }
 }
