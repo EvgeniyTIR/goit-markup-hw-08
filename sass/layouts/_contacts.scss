@@ -3,11 +3,17 @@
   display: none;
   @include tab{
     display: flex;
-    flex-direction: column;    
-  }
+    flex-direction: column; 
+    .auth__item:nth-child(1){
+      margin-bottom: 10px ;
+      }
+    }
   @include desk{
     flex-direction: row;
-  margin-left: auto; 
+    margin-left: auto;
+    .auth__item:nth-child(1){
+    margin-bottom: 0  ;
+    }  
   }
   .auth__item + .auth__item {    
     @include desk{
@@ -16,15 +22,12 @@
   }
 }
 // Иконки навигации
-
-.auth__link {
-  
+.auth__link {  
   color: $primary-text-color;
   @include font(500, 14px, 1.43, 0.02em);
   text-decoration: none;
   @include desk{
-    @include center;
-    margin-bottom: 10px;
+    @include center;    
     padding-top: 32px;
     padding-bottom: 32px;
   }  
