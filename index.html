@@ -50,7 +50,7 @@
                 <button type="button" class="moblile-menu__close-button" data-menu-close>
                 </button> 
                 <ul class="mobile-menu__list list">
-                    <li class="mobile-menu__item"><a href="./index.html" class="mobile-menu__link">Студия</a></li>
+                    <li class="mobile-menu__item"><a href="./index.html" class="mobile-menu__link current">Студия</a></li>
                     <li class="mobile-menu__item"><a href="./portfolio.html" class="mobile-menu__link">Портфолио</a></li>
                     <li clas="mobile-nav-menu__item"><a href="" class="mobile-menu__link">Контакты</a></li>
                 </ul>  
@@ -163,7 +163,11 @@
             <div class="conteiner">
                 <h2 class="team__title title">Наша команда</h2>
                 <ul class="team__list list">
-                    <li class="team__item"><img src="./images/mate1.png" alt="Игорь Демьяненко" width="270" height="260">
+                    <li class="team__item"><img
+                         srcset=
+                         "./images/team-mob-1-x1.jpg x1,
+                         ./images/team-mob-1-x2.jpg x2"
+                         src="./images/mate1.png" alt="Игорь Демьяненко" width="270" height="260">
                         <div class="team__frame">
                             <h3 class="team__members-name">Игорь Демьяненко</h3>
                             <p class="team__profession" lang="en">Product Designer</p>
@@ -191,7 +195,28 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="team__item"><img src="./images/mate2.png" alt="Ольга Репина" width="270" height="260">
+                    <li class="team__item">
+                        <picture>
+                            <source
+                            srcset=
+                         "./images/team-desk-2-x1.jpg x1,
+                         ./images/team-desk-2-x2.jpg x2"
+                            media="(min-width: 1200px)"
+                            />
+                            <source
+                            srcset=
+                         "./images/team-tab-2-x1.jpg x1,
+                         ./images/team-tab-2-x2.jpg x2"
+                            media="(min-width: 768px)"
+                            />
+                            <source
+                            srcset=
+                         "./images/team-mob-2-x1.jpg x1,
+                         ./images/team-mob-2-x2.jpg x2"
+                            media="(min-width: 480px)"
+                            />
+                            <img src="./images/mate2.png" alt="Ольга Репина" >
+                        </picture>                       
                         <div class="team__frame">
                             <h3 class="team__members-name">Ольга Репина</h3>
                             <p class="team__profession" lang="en">Frontend Developer</p>

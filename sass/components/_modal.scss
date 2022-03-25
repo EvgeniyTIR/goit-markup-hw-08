@@ -1,5 +1,5 @@
 /* -------------Модальное окно-------------*/
-.modal {
+.modal {    
   position: fixed;
   z-index: 1;
   left: 0;
@@ -18,15 +18,20 @@
   opacity: 0;
   pointer-events: none;
 }
-.modal__wrap {
+.modal__wrap {  
+  padding: 40px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
+  
+  width: 450px; 
+  height: 609px;
+  @include desk {     
   width: 528px;
   height: 581px;
-  padding: 40px;
+  padding: 40px; 
+    }
 
   background: $white-color;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -67,10 +72,14 @@
   }
 }
 .modal__title {
-  @include font(bold, 20px, null, 0.03em);
-  line-height: calc(23 / 20);
+  @include font(700, 20px, null, 0.03em);
+  line-height: calc(30 / 20);
   text-align: center;
-  margin-bottom: 8px;
+  margin-bottom: 8px;  
+  @include desk {     
+    @include font(700, 20px, null, 0.03em);
+    line-height: calc(23 / 20);
+    }   
   color: $title-text;
 }
 .modal__input {
@@ -83,8 +92,12 @@
 
   height: 40px;
   &::placeholder {
-    @include font(null, 12px, null, 0.01em);
-    line-height: calc(14 / 12);
+    @include font(null, 14px, null, 0.01em);
+    line-height: calc(16 / 14);
+    @include desk {     
+      @include font(null, 12px, null, 0.01em);
+      line-height: calc(14 / 12);
+      } 
     color: rgba(117, 117, 117, 0.5);
   }
 }
@@ -108,19 +121,26 @@
   margin-left: auto;
   margin-right: auto;
 }
-.modal__form-field {
-  margin-bottom: 6px;
+.modal__form-field {  
+  margin-bottom: 6px;  
+   
 }
 .modal__position-wrap {
   position: relative;
 }
 
-.modal__label-check {
-  @include font(null, 14px, null, 0.03em);
-  line-height: calc(24 / 14);
+.modal__label-check {    
+  padding-left: 25px;
+  @include font(null, 12px, null, 0.03em);  
+  line-height: calc(14 / 12);
+  @include desk {     
+  padding-left: 0;
+  @include font(null, 14px, null, 0.03em);  
+  line-height: calc(12 / 14);
+  } 
   align-items: center;
   cursor: pointer;
-}
+} 
 
 .modal__form-field-button {
   @include center;
@@ -148,15 +168,20 @@
   cursor: pointer;
 }
 .modal__form-field-checkbox {
-  @include center;
+  @include center;  
   position: relative;
   margin-bottom: 30px;
 }
 .modal__check-position {
   @include center;
   position: absolute;
-  top: 4px;
+  
+  top:0;
+  left:0;
+  @include desk {     
+  top: -2px;
   left: 4px;
+    } 
 
   margin-right: 0;
   width: 16px;
