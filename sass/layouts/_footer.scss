@@ -14,8 +14,7 @@
   margin-bottom: 20px;
 }
 .adress{
-  font-style: normal;
-  margin-bottom: 60px;
+  font-style: normal;  
   @include desk {    
     margin-bottom: 0;
      }   
@@ -51,17 +50,27 @@
   @extend %container;
 }
 .footer__invite-wrap {  
-  margin-bottom: 60px;
+  @include tab{
+    margin-bottom: 0;
+  }
   @include desk {    
   margin-left: 70px;
   margin-bottom: 0;
        }   
 }
+.footer__wrap-adress{
+  margin-bottom: 60px;
+  @include tab{
+    margin-bottom: 0;
+  }
+}
 .footer__wrap--tab{
+  margin-bottom: 60px;  
   @include tab{
   display: flex;
-  justify-content: space-around;
-  @include desk {    
+  justify-content: space-around;  
+  @include desk {   
+    margin-bottom: 0; 
   align-items: baseline;   
          }  
 }
